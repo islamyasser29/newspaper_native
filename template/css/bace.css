@@ -1,0 +1,117 @@
+:root {
+  --main-color: #0dcaf0;
+}
+body {
+  height: auto;
+  font-family: "Assistant", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+/* str navbar */
+.navbar .logo {
+  font-size: 2rem;
+}
+/* end navbar */
+/* str article */
+.article .main-title .icon {
+  font-size: 40px;
+  color: var(--main-color);
+}
+.main-title::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background-color: var(--main-color);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* str input */
+input,
+select,
+textarea {
+  border: var(--main-color) 2px solid !important;
+}
+textarea {
+  min-height: 250px !important;
+  max-height: 500px !important;
+}
+label {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+}
+/* end input */
+/* str table index */
+.article .table {
+  border: var(--main-color) 1px solid;
+  height: 200px;
+}
+.article .index_table th {
+  width: 30%;
+  border: var(--main-color) 1px solid;
+  line-height: 50px;
+}
+.article .index_table td {
+  line-height: 50px;
+}
+/* str table EDITORS */
+.article .editor {
+  border: var(--main-color) 1px solid;
+  height: 100px;
+}
+.article .editor tr th,
+.article .editor tr td {
+  line-height: 30px;
+  border: var(--main-color) 1px solid;
+}
+/* end table index */
+/* str table EDITORS */
+
+.article .table img {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border: var(--main-color) 1px solid;
+  border-radius: 50%;
+  margin: auto;
+}
+/* end table EDITORS */
+/* end table */
+/* str content */
+image {
+  width: 100%;
+  height: 100%;
+}
+/* end content */
+/* end article */
+/* str section */
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  .left-box {
+    height: 100px;
+    overflow: hidden;
+  }
+  .right-box {
+    padding: 20px;
+  }
+}
+/* end section */
+/* str footer */
+.footer {
+  background-color: var(--main-color);
+}
+.footer .icon-2 {
+  color: white;
+  font-size: 1.5rem;
+}
+.footer span,
+.footer {
+  color: #fff;
+  font-size: 20px;
+}
+/* end footer */

@@ -1,0 +1,54 @@
+CREATE DATABASE newspaper8;
+USE newspaper8;
+CREATE TABLE admin(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(50),
+	password VARCHAR(32)
+);
+CREATE TABLE editor(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50),
+	salary FLOAT
+);
+CREATE TABLE category(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(50),
+	id_manager int(11),
+	FOREIGN KEY(id_manager) REFERENCES editor(id)
+);
+CREATE TABLE news(
+	id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(255),
+	content TEXT,
+	id_editor int(11),
+	id_category int(11),
+	FOREIGN KEY(id_editor) REFERENCES editor(id),
+	FOREIGN KEY(id_category) REFERENCES category(id),
+	main_image VARCHAR(255)
+);
+CREATE TABLE news_images(
+    id INT(11) PRIMARY KEY AUTO_INCREMENT,
+	id_news INT(11),
+	image_name VARCHAR(255),
+	FOREIGN KEY(id_news) REFERENCES news(id)
+);
+INSERT INTO admin(username, password) VALUES('admin','202cb962ac59075b964b07152d234b70');
+INSERT INTO editor(name, salary) values('Ahmed','5000');
+INSERT INTO editor(name, salary) values('Ali','5500');
+INSERT INTO editor(name, salary) values('Ammar','6200');
+INSERT INTO editor(name, salary) values('Noha','7000');
+INSERT INTO editor(name, salary) values('Sayed','9000');
+INSERT INTO editor(name, salary) values('Kheder','3000');
+INSERT INTO editor(name, salary) values('Lobna','3400');
+INSERT INTO editor(name, salary) values('Sami','5600');
+INSERT INTO category(name, id_manager) values('Politics','1');
+INSERT INTO category(name, id_manager) values('Sports','2');
+INSERT INTO category(name, id_manager) values('Arts','3');
+INSERT INTO category(name, id_manager) values('Economy','2');
+INSERT INTO category(name, id_manager) values('Social','4');
+INSERT INTO category(name, id_manager) values('International','5');
+INSERT INTO category(name, id_manager) values('Local News','6');
+INSERT INTO category(name, id_manager) values('Youth','7');
+INSERT INTO news(title, content, id_editor, id_category,main_image) values('News1','WELCOME TO NEWS1 WELCOME TO NEWS1 WELCOME TO NEWS1 WELCOME TO NEWS1 WELCOME TO NEWS1 WELCOME TO NEWS1 WELCOME TO NEWS1',1,1,'x.png');
+INSERT INTO news(title, content, id_editor, id_category,main_image) values('News2','WELCOME TO NEWS2 WELCOME TO NEWS2 WELCOME TO NEWS2 WELCOME TO NEWS2 WELCOME TO NEWS2 WELCOME TO NEWS2 WELCOME TO NEWS2',2,2,'x.png');
+INSERT INTO news(title, content, id_editor, id_category,main_image) values('News3','WELCOME TO NEWS3 WELCOME TO NEWS3 WELCOME TO NEWS3 WELCOME TO NEWS3 WELCOME TO NEWS3 WELCOME TO NEWS3 WELCOME TO NEWS3',3,3,'x.png');
